@@ -1,0 +1,9 @@
+.directory
+src/.directory
+demo/.directory
+demo/plotxy/.directory
+demo/plotxy/.obj
+demo/plotxy/plotxy
+demo/test/.directory
+demo/test/.obj
+demo/test/gptest
