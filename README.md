@@ -1,5 +1,5 @@
 # gnu-plotstream
-Simple C++ interface for Gnuplot with stream ability like std::cout and so on.
+Simple C++ interface for Gnuplot with stream ability like ```std::cout``` and so on.
 
 Small but it supports the full functionality of Gnuplot.
 
