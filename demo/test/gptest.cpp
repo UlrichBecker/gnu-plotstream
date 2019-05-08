@@ -26,7 +26,7 @@
 #include <gnuplotstream.hpp>
 
 using namespace std;
-using namespace gps;
+using namespace gpstr;
 
 int main( void )
 {
@@ -35,9 +35,8 @@ int main( void )
    {
       PlotStream plot;
       plot << "plot sin(x)/x" << endl;
-      cout << "Press any key and the enter key to end." << endl;
-      int x;
-      cin >> x;
+      cout << "Press the enter key to end." << endl;
+      ::fgetc( stdin );
    }
    catch( Exception& e )
    {

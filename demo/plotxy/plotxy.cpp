@@ -26,7 +26,7 @@
 #include <gnuplotstream.hpp>
 
 using namespace std;
-using namespace gps;
+using namespace gpstr;
 
 int main( void )
 {
@@ -40,10 +40,8 @@ int main( void )
       for( int i = 0; i <= 100; i++ )
          plot << i << ' ' << i << endl;
       plot << 'e' << endl;
-
-      cout << "Press any key and the enter key to end." << endl;
-      int x;
-      cin >> x;
+      cout << "Press the enter key to end." << endl;
+      ::fgetc( stdin );
    }
    catch( Exception& e )
    {

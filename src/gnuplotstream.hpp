@@ -33,7 +33,7 @@
 /*!
  * @brief Namespace for GunPlotStream
  */
-namespace gps
+namespace gpstr
 {
 
 #ifndef GPS_DEFAULT_GNUPLOT_EXE

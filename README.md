@@ -1,6 +1,8 @@
 # gnu-plotstream
 Simple C++ interface for Gnuplot with stream ability like std::cout and so on.
 
+Small but it supports the full functionality of Gnuplot.
+
 For Linux only! Sorry.
 
 Example:
@@ -8,7 +10,7 @@ Example:
 #include <gnuplotstream.hpp>
 
 using namespace std;
-using namespace gps;
+using namespace gpstr; // Namespace for Gnu-Plot-STReam
 
 int main( void )
 {
@@ -17,9 +19,9 @@ int main( void )
    {
       PlotStream plot;
       plot << "plot sin(x)/x" << endl;
-      cout << "Press any key and the enter key to end." << endl;
-      int x;
-      cin >> x;
+
+      cout << "Press the enter key to end." << endl;
+      ::fgetc( stdin );
    }
    catch( Exception& e )
    {
@@ -29,3 +31,5 @@ int main( void )
    return EXIT_SUCCESS;
 }
 ```
+Result:
+![Result of example above](./plotstream_result.png)
