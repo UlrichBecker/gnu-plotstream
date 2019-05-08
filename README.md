@@ -34,3 +34,24 @@ int main( void )
 Result:
 
 ![Result of example above](./plotstream_result.png)
+
+If PlotStream has to invoke Gnuplot with additional command line options,
+then these options are the first parameter of the constructor of PlotStream.
+
+Example:
+```C++
+PlotStream plot( "-noraise --persist" );
+```
+Alternatively you can define the macro ```GPSTR_DEFAULT_OPTIONS``` in your makefile.
+
+By default the class PlotStream expect the executable of Gnuplot in ```/usr/bin/gnuplot```.
+If Gnuplot has been installed in a other directory,
+then the executable file has to be the second parameter of the Constructor:
+```C++
+PlotStream plot( GPSTR_DEFAULT_OPTIONS, "/path/to/my/gnuplot" );
+```
+or:
+```C++
+PlotStream plot( "-noraise --persist", "/path/to/my/gnuplot" );
+```
+Alternatively you can define the macro ```GPSTR_DEFAULT_GNUPLOT_EXE``` in your makefile which will overwrite the default.

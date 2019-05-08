@@ -35,12 +35,14 @@
  */
 namespace gpstr
 {
-
-#ifndef GPS_DEFAULT_GNUPLOT_EXE
-  #define GPS_DEFAULT_GNUPLOT_EXE "/usr/bin/gnuplot"
+#ifndef GPSTR_DEFAULT_OPTIONS
+  #define GPSTR_DEFAULT_OPTIONS ""
 #endif
-#ifndef GPS_DEFAULT_PIPE_BUFFER_SIZE
-  #define GPS_DEFAULT_PIPE_BUFFER_SIZE BUFSIZ
+#ifndef GPSTR_DEFAULT_GNUPLOT_EXE
+  #define GPSTR_DEFAULT_GNUPLOT_EXE "/usr/bin/gnuplot"
+#endif
+#ifndef GPSTR_DEFAULT_PIPE_BUFFER_SIZE
+  #define GPSTR_DEFAULT_PIPE_BUFFER_SIZE BUFSIZ
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -121,9 +123,9 @@ public:
     * @param gpExe Path and name of the Gnuplot executable.
     * @param pipeSize Pinesize in bytes for the communication to Gnuplot.
     */
-   PlotStream( const std::string gpOpt    = "",
-               const std::string gpExe    = GPS_DEFAULT_GNUPLOT_EXE,
-               const std::size_t pipeSize = GPS_DEFAULT_PIPE_BUFFER_SIZE
+   PlotStream( const std::string gpOpt    = GPSTR_DEFAULT_OPTIONS,
+               const std::string gpExe    = GPSTR_DEFAULT_GNUPLOT_EXE,
+               const std::size_t pipeSize = GPSTR_DEFAULT_PIPE_BUFFER_SIZE
              );
 
    /*!
