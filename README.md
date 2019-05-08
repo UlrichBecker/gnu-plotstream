@@ -32,4 +32,5 @@ int main( void )
 }
 ```
 Result:
+
 ![Result of example above](./plotstream_result.png)
