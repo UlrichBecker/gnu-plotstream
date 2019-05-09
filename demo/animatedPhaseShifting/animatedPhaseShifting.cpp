@@ -30,6 +30,8 @@
 using namespace std;
 using namespace gpstr;
 
+constexpr double PI = 3.14159;
+
 int main( void )
 {
    try
@@ -41,10 +43,10 @@ int main( void )
       {
          plot << "plot sin(x-" << phase << ")" << endl;
          ::usleep( 100000 );
-         if( phase >= 2 * 3.14159265 )
-            phase = 0.0;
+         if( phase >= 2 * PI )
+            phase = 0.0; 
          else
-            phase += 0.05;
+            phase += (PI / 100.0) ;
       }
    }
    catch( Exception& e )
