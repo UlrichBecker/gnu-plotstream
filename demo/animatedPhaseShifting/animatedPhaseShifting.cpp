@@ -43,7 +43,7 @@ int main( void )
       {
          plot << "plot sin(x-" << phase << ")" << endl;
          ::usleep( 100000 );
-         if( phase >= 2 * PI )
+         if( phase >= (2 * PI - PI / 100.0) )
             phase = 0.0; 
          else
             phase += (PI / 100.0) ;
