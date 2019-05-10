@@ -56,8 +56,8 @@ class Exception: public std::exception
    const std::string m_message;
 
 public:
-   Exception( const std::string message ):
-      m_message( message ) {}
+   Exception( const std::string& message ):
+      m_message( "gpstr::PlotStream: " + message ) {}
 
    const char* what( void ) const noexcept override
    {
@@ -85,7 +85,7 @@ public:
  *       cout << "Press the enter key to end." << endl;
  *       ::fgetc( stdin );
  *    }
- *    catch( Exception& e )
+ *    catch( exception& e )
  *    {
  *       cerr << e.what() << endl;
  *       return EXIT_FAILURE;

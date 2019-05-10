@@ -38,7 +38,7 @@ int main( void )
       cout << "Press the enter key to end." << endl;
       ::fgetc( stdin );
    }
-   catch( Exception& e )
+   catch( exception& e )
    {
       cerr << e.what() << endl;
       return EXIT_FAILURE;
