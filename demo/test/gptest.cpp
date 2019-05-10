@@ -33,10 +33,8 @@ int main( void )
    cout << "Minimal test-program plotting the function si(x)" << endl;
    try
    {
-      PlotStream plot;
+      PlotStream plot( "--persist" );
       plot << "plot sin(x)/x" << endl;
-      cout << "Press the enter key to end." << endl;
-      ::fgetc( stdin );
    }
    catch( exception& e )
    {
