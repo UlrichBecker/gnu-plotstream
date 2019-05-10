@@ -118,7 +118,7 @@ public:
     * @note In the case of an error a exception becomes thrown.
     * @param gpOpt Call options for Gnuplot executable.
     * @param gpExe Path and name of the Gnuplot executable.
-    * @param pipeSize Pinesize in bytes for the communication to Gnuplot.
+    * @param pipeSize Pipe size in bytes for the communication to Gnuplot.
     */
    PlotStream( const std::string gpOpt    = GPSTR_DEFAULT_OPTIONS,
                const std::string gpExe    = GPSTR_DEFAULT_GNUPLOT_EXE,
