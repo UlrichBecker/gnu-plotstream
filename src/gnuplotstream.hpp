@@ -29,6 +29,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <exception>
 
 /*!
  * @brief Namespace for GunPlotStream
@@ -50,17 +51,17 @@ namespace gpstr
  * @brief Exception class of the class PlotStream for the case that something
  *        has been gone wrong.
  */
-class Exception
+class Exception: public std::exception
 {
    const std::string m_message;
 
 public:
-   Exception( const std::string msg ):
-      m_message( msg ) {}
+   Exception( const std::string message ):
+      m_message( message ) {}
 
-   const std::string& what( void ) const
+   const char* what( void ) const noexcept override
    {
-      return m_message;
+      return m_message.c_str();
    }
 };
 
@@ -97,7 +98,6 @@ class PlotStream: public std::ostream
 {
    class StringBuffer: public std::stringbuf
    {
-      friend class PlotStream;
       PlotStream*   m_pParent;
 
    public:
