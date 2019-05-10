@@ -126,7 +126,9 @@ public:
              );
 
    /*!
-    * @brief Destructor. Closes the pipe to Gnuplot and terminates it.
+    * @brief Destructor. Closes the pipe to Gnuplot and the running Gnuplot
+    *        process becomes terminated if the constructor was not called
+    *        with the parameter "--persist" or "-p".
     */
    ~PlotStream( void );
 
