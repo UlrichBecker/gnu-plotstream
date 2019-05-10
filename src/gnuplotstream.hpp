@@ -69,7 +69,7 @@ public:
 /*! ---------------------------------------------------------------------------
  * @brief Gnuplot interface class with stream ability.
  *
- * Ecample:
+ * Example:
  * @code
  * #include <gnuplotstream.hpp>
  *
