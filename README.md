@@ -52,3 +52,7 @@ or:
 PlotStream plot( "-noraise --persist", "/path/to/my/gnuplot" );
 ```
 Alternatively you can define the macro ```GPSTR_DEFAULT_GNUPLOT_EXE``` in your makefile which will overwrite the default.
+
+For detailed information about Gnuplot look in to the [PDF documentation of Gnuplot]( http://www.gnuplot.info/docs_5.0/gnuplot.pdf ).
+
+Or vitit the [homepage of Gnuplot]( http://www.gnuplot.info ).
