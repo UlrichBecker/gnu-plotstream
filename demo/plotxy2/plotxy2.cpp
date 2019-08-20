@@ -1,8 +1,8 @@
 /*!
- *  @file plotxy.cpp
- *  @brief  Test program plotting X/Y coordinates
+ *  @file plotxy2.cpp
+ *  @brief  Test program plotting two graphs in X/Y coordinates
  *
- *  @date 07.05.2019
+ *  @date 20.08.2019
  *  @copyright (C) 2019 GSI Helmholtz Centre for Heavy Ion Research GmbH
  *
  *  @author Ulrich Becker <u.becker@gsi.de>
@@ -30,16 +30,31 @@ using namespace gpstr;
 
 int main( void )
 {
-   cout << "Minimal test-program plotting X/Y coordinates" << endl;
+   cout << "Minimal test-program plotting two graphs in X/Y coordinates" << endl;
    try
    {
+      constexpr int maxXY = 100;
       PlotStream plot( "-noraise" );
       plot << "set terminal X11 title \"XY-Test\"" << endl;
       plot << "set grid" << endl;
-      plot << "plot '-' title \"Test\" with lines" << endl;
-      for( int i = 0; i <= 100; i++ )
-         plot << i << ' ' << i << endl;
+      plot << "set datafile separator ','" << endl;
+      plot << "set xrange [0:" << maxXY << ']' << endl;
+      plot << "set yrange [0:" << maxXY << ']' << endl;
+      plot << "plot '-' using 2 title 'rising' with lines,"
+                  " '-' using 3 title 'falling' with lines" << endl;
+ 
+      // Sending first and second column.
+      // Third column will ignored.
+      for( int i = 0; i <= maxXY; i++ )
+         plot << i << ',' << i << ',' << endl;
       plot << 'e' << endl;
+
+      // Sending first and third column.
+      // Second column will ignored.
+      for( int i = 0; i <= maxXY; i++ )
+         plot << i << ",," << maxXY-i << endl;
+      plot << 'e' << endl;
+
       cout << "Press the enter key to end." << endl;
       ::fgetc( stdin );
    }
