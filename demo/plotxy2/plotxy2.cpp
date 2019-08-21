@@ -37,22 +37,19 @@ int main( void )
       PlotStream plot( "-noraise" );
       plot << "set terminal X11 title \"XY-Test\"" << endl;
       plot << "set grid" << endl;
-      plot << "set datafile separator ','" << endl;
       plot << "set xrange [0:" << maxXY << ']' << endl;
       plot << "set yrange [0:" << maxXY << ']' << endl;
-      plot << "plot '-' using 2 title 'rising' with lines,"
-                  " '-' using 3 title 'falling' with lines" << endl;
+      plot << "plot '-' title 'rising' with lines,"
+                  " '-' title 'falling' with lines" << endl;
  
-      // Sending first and second column.
-      // Third column will ignored.
+      // Plotting rising line.
       for( int i = 0; i <= maxXY; i++ )
-         plot << i << ',' << i << ',' << endl;
+         plot << i << ' ' << i << endl;
       plot << 'e' << endl;
 
-      // Sending first and third column.
-      // Second column will ignored.
+      // Plotting falling line.
       for( int i = 0; i <= maxXY; i++ )
-         plot << i << ",," << maxXY-i << endl;
+         plot << i << ' ' << maxXY-i << endl;
       plot << 'e' << endl;
 
       cout << "Press the enter key to end." << endl;
