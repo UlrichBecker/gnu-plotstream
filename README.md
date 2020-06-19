@@ -55,4 +55,4 @@ Alternatively you can define the macro ```GPSTR_DEFAULT_GNUPLOT_EXE``` in your m
 
 For detailed information about Gnuplot look in to the [PDF documentation of Gnuplot]( http://www.gnuplot.info/docs_5.0/gnuplot.pdf ).
 
-Or vitit the [homepage of Gnuplot]( http://www.gnuplot.info ).
+Or visit the [homepage of Gnuplot]( http://www.gnuplot.info ).
